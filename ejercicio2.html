@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gif Ejercicio 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Leslie Romero">
+    <meta name="description" content="gif 2">
+    <meta name="keywords" content="animacion">
+   <style>
+
+
+    body{
+        margin: 0;
+    }
+
+    .sky{
+        width: 100vw;
+        height: 65vh;
+        background-color: #A9E2F3;
+        position: relative;
+        padding: 2rem 3rem;
+        box-sizing: border-box;
+    }
+    .sky__container{
+        width: 50rem;
+        color: white;
+
+    }
+
+    .sky__sol{
+        margin: 0;
+        width: 7rem;
+        height: auto;
+        animation: sol .3s ease-in-out 0s ;
+    }
+
+    .sky__container-info{
+        animation: asoma 3s ease-in 0s;
+    }
+
+    .sky__container h1{
+        margin: 0 0 .5rem 0;
+
+    }
+    .sky__container p{
+        margin: 0;
+    }
+
+
+
+    .sky__sol img{
+        width: 100%;
+        height: auto;
+    }
+
+    .sky__palmera{
+    width: 60px;
+    z-index: 4;
+    position: absolute;
+    margin: 8rem 0  0 35rem;
+
+    }
+
+    .sky__palmera svg{
+        width: 8rem;
+        height: auto;
+    }
+
+    .sky__palmera--hoja{
+        opacity: 0;
+        animation: hoja 4s ease-in-out 1.4s infinite;
+    }
+
+    .sky__palmera--fruta{
+        opacity: 0;
+        animation: fruta 4s ease-in-out 1s infinite;
+    }
+
+    .sky__palmera--tronco{
+        opacity: 0;
+        animation: tronco 4s ease-in-out 0s infinite;
+    }
+
+    .arena{
+        width: 100vw;
+        height: 35vh;
+        background-color:#F5F6CE;
+        display: flex;
+        justify-content: space-between;
+        padding: 3rem 2rem;
+        box-sizing:border-box;
+        z-index: 1;
+        position: relative;
+    }
+
+    .arena__quitasol{
+        width: 8rem;
+        z-index: 2;
+        animation: quitasol 4s ;
+        transition-timing-function:ease-in-out;
+        transition-delay: 10s;
+    }
+
+    .arena__quitasol img{
+       width: 100%;
+       height: auto;
+    }
+
+    .arena__pelota{
+        width: 4rem;
+        z-index: 2;
+        animation: pelota 4s ;
+        transition-timing-function:ease-in-out;
+        transition-delay: 10s;
+    }
+
+    .arena__pelota img{
+        width: 100%;
+       height: auto;
+    }
+
+    .arena__tipa{
+        width: 50px;
+        height: 50px;
+        z-index: 3;
+        position: absolute;
+        margin: 1.7rem 8rem 0 40rem;
+        transform: scale(1.4)
+
+    }
+
+    .arena__tipa-vestido--color{
+        animation: vestido 1s ease-in-out 0s;
+
+        /*
+        animation-name:color
+        transition-property: all;
+        transition-duration: 0.5s;
+        /*tambien puedo usar la cuerva de bezziel*/
+        /*transition-timing-function: ease;
+        animation-iteration-count: infinite;*/
+    }
+    .arena__tipa-flor{
+
+    }
+
+    .arena__tipa-flor--color1{
+        animation: flor1 1s ease-in-out 0s ;
+        /*llevaba un infinity*/
+    }
+
+    .arena__tipa-flor--color2{
+        animation: flor2 1s ease-in-out 0s;
+        /*llevaba un infinity*/
+    }
+
+    @keyframes sol{
+        0%{
+            opacity: 0;
+        }
+
+        60%{
+            opacity: 0 ;
+        }
+
+        100%{
+            opacity: 1;
+        }
+    }
+
+    @keyframes asoma{
+        0%{
+            opacity: 0;
+        }
+
+        100%{
+            opacity: 1;
+        }
+    }
+
+    @keyframes hoja{
+        0%{
+           opacity: 0;
+        }
+
+        30%{
+            opacity: 0.6;
+        }
+
+        100%{
+            opacity: 1;
+        }
+    }
+
+    @keyframes fruta{
+        0%{
+           opacity: 0;
+        }
+
+        30%{
+            opacity: 0.6;
+        }
+
+        100%{
+            opacity: 1;
+        }
+    }
+
+    @keyframes tronco{
+        0%{
+           opacity: 0;
+        }
+
+        30%{
+            opacity: 0.6;
+        }
+
+        100%{
+            opacity: 1;
+        }
+    }
+
+    @keyframes quitasol{
+        0%{
+            margin-left: 0;
+            opacity: 0;
+        }
+
+        100%{
+            margin-left: 15rem;
+            opacity: 1;
+        }
+    }
+
+    @keyframes pelota{
+        0%{
+            margin-right: 0;
+            opacity: 0;
+        }
+
+        100%{
+            margin-right: 15rem;
+            opacity: 1;
+        }
+    }
+
+
+
+    @keyframes vestido{
+        0%{
+            fill: white;
+        }
+
+        100%{
+            fill: #9ce072;
+        }
+    }
+
+    @keyframes flor1{
+        0%{
+            fill:white;
+        }
+
+        100%{
+            fill:#ffd640;
+        }
+    }
+    @keyframes flor2{
+        0%{
+            fill:white;
+        }
+
+        100%{
+            fill:#ffd666;
+        }
+    }
+   </style>
+
+</head>
+
+<body>
+   <div class="sky">
+       <div class="sky__container">
+           <figure class="sky__sol"><img src="assets/img/ejercicio-3_sun.svg" alt="sol"></figure>
+           <div class="sky__container-info">
+                <h1>Vive el Verano</h1>
+                <p>Con la protección del bloqueador solar número 1 de chile podrás tener un verano protegido junto a toda tu familia</p>
+           </div>
+
+           <div class="sky__palmera">
+
+            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59 59">
+                <g>
+                    <path class="sky__palmera--tronco" d="M30.34 17.966c-.114.009-.224.034-.34.034a3.963 3.963 0 0 1-2.52-.917c.319.57.52 1.215.52 1.917 0 .6-.1 1.164-.378 1.675C29.698 31.774 32.325 51.675 26 58h14s-.39-26.086-9.66-40.034z" fill="#805333"/>
+                <circle class="sky__palmera--fruta" cx="30" cy="14" r="4" fill="#cbb292"/>
+                <path class="sky__palmera--hoja" d="M36.856 5.684c-3.486.934-6.354 2.7-8.138 4.545A3.954 3.954 0 0 1 30 10a3.985 3.985 0 0 1 3.772 2.722l3.188-.854.931-2.32 1.967 1.544L50 8.374c-.715-2.667-6.742-4.405-13.144-2.69z" fill="#4fba6f"/>
+                <path class="sky__palmera--hoja" d="M27.563 10.849c-.86-2.6-3.409-5.828-7.19-8.117C14.703-.699 8.43-.71 7 1.652l8.983 5.437 2.319-.934.248 2.488 7.531 4.558a3.982 3.982 0 0 1 1.482-2.352z" fill="#4c8056"/>
+                <path class="sky__palmera--hoja" d="M26 14c0-.33.051-.646.127-.953-2.019-1.85-7.016-2.771-12.271-1.362C7.454 13.4 3.103 17.918 3.818 20.586l10.142-2.718.931-2.32 1.967 1.544 4.737-1.269A3.957 3.957 0 0 1 24 15c.165 0 .322.029.482.049l1.581-.424A4.023 4.023 0 0 1 26 14z" fill="#4fba6f"/>
+                <path class="sky__palmera--fruta" d="M26.501 15.902A3.956 3.956 0 0 0 24 15a4 4 0 1 0 4 4c0-.692-.192-1.334-.501-1.902a3.986 3.986 0 0 1-.998-1.196z" fill="#7f6e5d"/>
+                </g>
+            </svg>
+           </div>
+
+       </div>
+
+   </div>
+
+
+   <div class="arena">
+
+    <div class="arena__quitasol">
+        <img src="assets/img/ejercicio-3_sun-umbrella.svg" alt="quitasol">
+    </div>
+    <div class="arena__pelota">
+        <img src="assets/img/ejercicio-3_beach-ball.svg" alt="pelota">
+    </div>
+    <div class="arena__tipa">
+            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 512 512">
+                <path d="M445.573 415.248H241V194.381h173.213l16.706 65.99C462.381 274.999 483 306.834 483 342c0 27.233-12.135 52.707-33.294 69.892l-4.133 3.356z" fill="#331d17"/>
+                <path d="M62.294 411.892C41.135 394.707 29 369.233 29 342c0-35.166 20.619-67.001 52.081-81.629l16.706-65.99H256v220.867H66.427l-4.133-3.356z" fill="#5b3227"/>
+                <path d="M396 210h-22.79l.318-85H396c23.435 0 42.5 19.065 42.5 42.5S419.435 210 396 210z" fill="#bf4e2e"/>
+                <path d="M396 155v16.91c0 77.2-62.8 140-140 140l-40-282L396 155z" fill="#cf6446"/>
+                <path d="M256 19.91v292c-77.2 0-140-62.8-140-140 0 0 15.855-152 140-152z" fill="#d97a5f"/>
+                <path d="M483 477v35h-60l-217-40 50-130h92c74.44 0 135 60.56 135 135z" fill="#cf6446"/>
+                <path d="M256 342v140L89 512H29v-35c0-74.44 60.56-135 135-135h92z" fill="#d97a5f"/>
+                <path d="M348 402h-92l-50 70 187 40h30v-35c0-41.36-33.65-75-75-75z" fill="#71b04a"/>
+                <path d="M164 402c-41.35 0-75 33.64-75 75v35h30l137-80v-30h-92z" fill="#82cc56"/>
+                <path d="M396 140v15h-85c-23.82 0-44.96-14.1-54.55-35H256l-30-60 30-60c77.2 0 140 62.8 140 140z" fill="#331d17"/>
+                <path d="M116 140v32h30v-32c0-39.152 20.564-73.586 51.455-93.084A59.912 59.912 0 0 0 196 60c0 33.08 26.92 60 60 60V0c-77.196 0-140 62.804-140 140z" fill="#5b3227"/>
+                <path d="M393 477v35H256l-50-40 50-40h92c24.81 0 45 20.19 45 45z" fill="#82cc56"/>
+                <path d="M101.855 137.5l-17.5 37.5 17.5 37.5c20.711 0 37.5-16.789 37.5-37.5s-16.789-37.5-37.5-37.5z" fill="#fff0eb"/>
+                <path d="M64.355 175c0 20.711 16.789 37.5 37.5 37.5v-75c-20.711 0-37.5 16.789-37.5 37.5z" fill="#fff"/>
+                <g class="arena__tipa-vestido">
+                    <path class="arena__tipa-vestido--color" d="M256 432v80H119v-35c0-24.81 20.19-45 45-45h92z" fill="#9ce072"/>
+                </g>
+                <g class="arena__tipa-flor">
+                <path class="arena__tipa-flor--color1" d="M158.15 142.5c6.08 10.53 5.04 23.22-1.62 32.5 6.66 9.28 7.7 21.97 1.62 32.5-6.09 10.53-17.59 15.98-28.96 14.85-4.71 10.41-15.17 17.65-27.34 17.65l-34.67-65 34.67-65c12.17 0 22.63 7.24 27.34 17.65 11.37-1.13 22.87 4.32 28.96 14.85z" fill="#ffd640"/>
+                <path class="arena__tipa-flor--color2" d="M101.85 110v130c-12.16 0-22.62-7.24-27.33-17.65-11.37 1.13-22.87-4.32-28.96-14.85-6.08-10.53-5.04-23.22 1.62-32.5-6.66-9.28-7.7-21.97-1.62-32.5 6.09-10.53 17.59-15.98 28.96-14.85C79.23 117.24 89.69 110 101.85 110z" fill="#fff666"/>
+                </g>
+
+                <circle cx="101.86" cy="175" r="15" fill="#82cc56"/>
+            </svg>
+
+    </div>
+   </div>
+
+</body>
+</html>

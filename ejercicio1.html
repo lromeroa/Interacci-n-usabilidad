@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gif Ejercicio 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Leslie Romero">
+    <meta name="description" content="gif 1">
+    <meta name="keywords" content="animacion">
+   <style>
+
+
+    body{
+        margin: 0;
+    }
+
+    .btn{
+        font-size: 30px;
+        color:white;
+        background-color: #2E2E2E;
+        border: 1px solid #2E2E2E;
+        padding: 2rem 6rem;
+    }
+
+    .btn:hover{
+       background-color: rgb(141,141,141,0.6);
+       border: 1px solid white;
+       box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+       transform: translate(10px,10px);
+        transition-timing-function: cubic-bezier(.72,.38,.83,.53);
+    }
+
+    button{
+        animation: mover 0.5s ease-in 0s;
+    }
+
+    @keyframes mover{
+        0%{ margin: 0}
+        100%{margin:3rem; }
+
+    }
+   .gradiente{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*codigo de gradiente*/
+    background: rgba(102,153,204,1);
+    background: -moz-linear-gradient(left, rgba(102,153,204,1) 0%, rgba(204,102,153,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(102,153,204,1)), color-stop(100%, rgba(204,102,153,1)));
+    background: -webkit-linear-gradient(left, rgba(102,153,204,1) 0%, rgba(204,102,153,1) 100%);
+    background: -o-linear-gradient(left, rgba(102,153,204,1) 0%, rgba(204,102,153,1) 100%);
+    background: -ms-linear-gradient(left, rgba(102,153,204,1) 0%, rgba(204,102,153,1) 100%);
+    background: linear-gradient(to right, rgba(102,153,204,1) 0%, rgba(204,102,153,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6699cc', endColorstr='#cc6699', GradientType=1 );
+
+   }
+
+   </style>
+
+</head>
+
+<body>
+    <div class="gradiente">
+        <button class="btn">CONOCE MÁS</button>
+    </div>
+
+</body>
+</html>
